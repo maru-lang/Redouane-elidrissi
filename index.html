@@ -10,12 +10,11 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            /* Updated Brand Identity Colors based on the provided portrait */
-            --primary: #d49a4f;      /* Warm golden amber from the light source */
-            --primary-dark: #b57a31; /* Deeper orange/gold */
-            --secondary: #2d2d32;    /* Dark slate/charcoal */
-            --dark: #0a0a0c;         /* Deep cinematic black */
-            --light: #f8fafc; 
+            --primary: #d49a4f;
+            --primary-dark: #b57a31;
+            --secondary: #2d2d32;
+            --dark: #0a0a0c;
+            --light: #f8fafc;
             --gray: #64748b;
             --card-bg: #ffffff;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -30,19 +29,16 @@
         .hero {
             min-height: 100vh; display: flex; align-items: center; justify-content: center;
             position: relative; overflow: hidden;
-            /* Deep charcoal base matching the left side of the portrait */
             background: #0d0d11;
         }
 
-        /* Bulletproof Animated Blobs */
         .blob {
             position: absolute;
             border-radius: 50%;
-            filter: blur(100px); /* Increased blur for a softer, cinematic light bleed */
-            opacity: 0.8; 
+            filter: blur(100px);
+            opacity: 0.8;
         }
 
-        /* Soft dark slate/grey light on the left */
         .blob-1 {
             width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(45, 45, 52, 0.4) 0%, rgba(45, 45, 52, 0) 70%);
@@ -50,7 +46,6 @@
             animation: move1 15s ease-in-out infinite alternate;
         }
 
-        /* The primary warm golden/amber glow on the right */
         .blob-2 {
             width: 700px; height: 700px;
             background: radial-gradient(circle, rgba(212, 154, 79, 0.45) 0%, rgba(212, 154, 79, 0) 70%);
@@ -58,7 +53,6 @@
             animation: move2 18s ease-in-out infinite alternate;
         }
 
-        /* Deep black/shadow void bottom left */
         .blob-3 {
             width: 450px; height: 450px;
             background: radial-gradient(circle, rgba(10, 10, 12, 0.9) 0%, rgba(10, 10, 12, 0) 70%);
@@ -66,7 +60,6 @@
             animation: move3 20s ease-in-out infinite alternate;
         }
 
-        /* Secondary softer warm glow bottom right */
         .blob-4 {
             width: 550px; height: 550px;
             background: radial-gradient(circle, rgba(181, 122, 49, 0.3) 0%, rgba(181, 122, 49, 0) 70%);
@@ -74,7 +67,6 @@
             animation: move4 16s ease-in-out infinite alternate;
         }
 
-        /* Standard 2D Keyframes */
         @keyframes move1 {
             0% { transform: translate(0px, 0px) scale(1); }
             50% { transform: translate(200px, 150px) scale(1.1); }
@@ -96,7 +88,6 @@
             100% { transform: translate(-100px, -250px) scale(1); }
         }
 
-        /* Floating particles (simulating dust in the light beam) */
         .particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; pointer-events: none; }
         .particle { position: absolute; width: 3px; height: 3px; background: rgba(212, 154, 79, 0.5); border-radius: 50%; animation: floatUp linear infinite; }
         .particle:nth-child(1) { left: 15%; animation-duration: 18s; animation-delay: 0s; width: 5px; height: 5px; }
@@ -113,25 +104,22 @@
             100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
         }
 
-        .hero-content { text-align: center; z-index: 2; padding: 2rem; max-width: 700px; position: relative; }
+        .hero-content { text-align: center; z-index: 2; padding: 2rem; max-width: 800px; position: relative; }
 
-        /* Profile image */
         .profile-img {
-            width: 150px; height: 150px; 
-            border-radius: 50%; 
-            border: 3px solid rgba(212, 154, 79, 0.5); /* Gold border */
-            object-fit: cover; 
+            width: 150px; height: 150px;
+            border-radius: 50%;
+            border: 3px solid rgba(212, 154, 79, 0.5);
+            object-fit: cover;
             margin-bottom: 1.5rem;
             box-shadow: 0 15px 35px rgba(0,0,0,0.5);
             transition: transform 0.3s ease;
-            /* Gradient matching the lighting */
             background: linear-gradient(135deg, #1a1a1f, #d49a4f);
             transform: translateZ(0);
             backface-visibility: hidden;
         }
         .profile-img:hover { transform: scale(1.05); border-color: rgba(212, 154, 79, 0.9); }
 
-        /* Name and Verification Badge Container */
         .name-container {
             display: flex;
             align-items: center;
@@ -140,13 +128,13 @@
             margin-bottom: 0.4rem;
         }
 
-        .hero h1 { 
-            font-family: 'Inter', 'Tajawal', sans-serif; 
-            font-size: 2.8rem; 
-            font-weight: 800; 
-            color: white; 
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
-            letter-spacing: -0.5px; 
+        .hero h1 {
+            font-family: 'Inter', 'Tajawal', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            letter-spacing: -0.5px;
         }
 
         .verified-badge {
@@ -155,11 +143,9 @@
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
 
-        /* Title - stacked one under one */
         .title-stack { margin-bottom: 1.2rem; }
         .title-line { font-family: 'Inter', 'Tajawal', sans-serif; font-size: 1.1rem; color: rgba(255,255,255,0.8); font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; line-height: 1.8; }
 
-        /* Social links */
         .social-links { display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 1.5rem; }
         .social-btn {
             display: inline-flex; align-items: center; justify-content: center;
@@ -173,10 +159,9 @@
         .social-btn:hover { background: rgba(212, 154, 79, 0.2); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.4); border-color: rgba(212, 154, 79, 0.6); }
         .social-btn img { width: 20px; height: 20px; filter: brightness(0) invert(1); }
 
-        /* Bio */
         .bio-container {
             max-width: 600px; margin: 0 auto 1.8rem; padding: 1.5rem;
-            background: rgba(20, 20, 24, 0.4); /* Darker transparent bg */
+            background: rgba(20, 20, 24, 0.4);
             backdrop-filter: blur(12px);
             border-radius: 20px;
             border: 1px solid rgba(255,255,255,0.08);
@@ -186,10 +171,37 @@
         .bio-divider { width: 50px; height: 2px; background: linear-gradient(90deg, transparent, rgba(212, 154, 79, 0.6), transparent); margin: 0.8rem auto; border-radius: 2px; }
         .bio-arabic { font-family: 'Tajawal', 'Noto Sans Arabic', sans-serif; font-size: 1.05rem; color: rgba(255,255,255,0.92); line-height: 2; font-weight: 400; direction: rtl; }
 
-        /* Work buttons */
-        .hero-work-buttons { display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; }
+        /* ===== PROFESSIONAL HIGHLIGHT SENTENCE ===== */
+        .work-highlight {
+            margin-bottom: 1.2rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(212, 154, 79, 0.12);
+            border: 1px solid rgba(212, 154, 79, 0.25);
+            border-radius: 50px;
+            display: inline-block;
+        }
+        .work-highlight-text {
+            font-family: 'Tajawal', 'Noto Sans Arabic', sans-serif;
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            direction: rtl;
+            line-height: 1.6;
+        }
+        .work-highlight-text .highlight-gold {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* ===== HORIZONTAL WORK BUTTONS ===== */
+        .hero-work-buttons { 
+            display: flex; 
+            justify-content: center; 
+            gap: 1rem; 
+            flex-wrap: nowrap;
+        }
         .hero-work-btn {
-            padding: 0.9rem 2rem;
+            padding: 0.8rem 1.8rem;
             background: rgba(255,255,255,0.05);
             color: white; border: 1.5px solid rgba(255,255,255,0.2);
             border-radius: 50px; font-size: 0.95rem; font-weight: 600;
@@ -197,6 +209,7 @@
             text-decoration: none; display: inline-flex;
             align-items: center; gap: 0.5rem;
             font-family: 'Inter', 'Tajawal', sans-serif;
+            white-space: nowrap;
         }
         .hero-work-btn:hover { background: var(--primary); color: #000; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(212, 154, 79, 0.3); border-color: var(--primary); }
 
@@ -222,8 +235,10 @@
         .project-card:hover .view-btn { transform: translateY(0); }
         .project-info { padding: 1.2rem; }
         .project-tag { display: inline-block; padding: 0.25rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; }
-        .tag-video { background: rgba(212, 154, 79, 0.15); color: var(--primary-dark); }
-        .tag-photo { background: rgba(45, 45, 50, 0.1); color: var(--secondary); }
+        .tag-food { background: rgba(212, 154, 79, 0.15); color: var(--primary-dark); }
+        .tag-cars { background: rgba(45, 45, 50, 0.1); color: var(--secondary); }
+        .tag-studio { background: rgba(16, 185, 129, 0.15); color: #059669; }
+        .tag-events { background: rgba(139, 92, 246, 0.15); color: #7c3aed; }
         .project-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--dark); }
         .project-desc { color: var(--gray); font-size: 0.9rem; line-height: 1.5; }
 
@@ -258,11 +273,26 @@
             .projects-grid { grid-template-columns: 1fr; }
             .modal-content { max-height: 95vh; }
             .modal-image { height: 200px; }
-            .hero-work-buttons { flex-direction: column; align-items: center; }
+            .work-highlight {
+                padding: 0.6rem 1rem;
+                margin-bottom: 1rem;
+            }
+            .work-highlight-text {
+                font-size: 0.9rem;
+            }
+            .hero-work-buttons { 
+                flex-wrap: wrap; 
+                gap: 0.6rem;
+            }
+            .hero-work-btn { 
+                padding: 0.7rem 1.4rem; 
+                font-size: 0.85rem;
+            }
             .social-btn { width: 40px; height: 40px; }
             .social-btn img { width: 18px; height: 18px; }
         }
     </style>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -270,13 +300,11 @@
 <!-- ===== HERO SECTION ===== -->
 <section class="hero" id="home">
 
-    <!-- FAST, HARDWARE-ACCELERATED GRADIENT BLOBS MATCHING THE REFERENCE IMAGE -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
     <div class="blob blob-4"></div>
 
-    <!-- Floating particles simulating dust in the golden light -->
     <div class="particles">
         <div class="particle"></div><div class="particle"></div><div class="particle"></div>
         <div class="particle"></div><div class="particle"></div><div class="particle"></div>
@@ -284,12 +312,10 @@
 
     <div class="hero-content">
 
-        <!-- FAST LOCAL IMAGE -->
-   <img src="profile.png" alt="Redouane Elidrissi" class="profile-img" id="profileImg">
+        <img src="profile.png" alt="Redouane Elidrissi" class="profile-img" id="profileImg">
 
         <div class="name-container">
             <h1 id="heroName">Redouane Elidrissi</h1>
-            <!-- Instagram / Facebook style verification badge -->
             <svg class="verified-badge" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 22C11.5 22 11.1 21.8 10.7 21.5L8.5 19.8L5.8 20C4.8 20.1 3.9 19.2 4 18.2L4.2 15.5L2.5 13.3C1.9 12.5 1.9 11.5 2.5 10.7L4.2 8.5L4 5.8C3.9 4.8 4.8 3.9 5.8 4L8.5 4.2L10.7 2.5C11.5 1.9 12.5 1.9 13.3 2.5L15.5 4.2L18.2 4C19.2 3.9 20.1 4.8 20 5.8L19.8 8.5L21.5 10.7C22.1 11.5 22.1 12.5 21.5 13.3L19.8 15.5L20 18.2C20.1 19.2 19.2 20.1 18.2 20L15.5 19.8L13.3 21.5C12.9 21.8 12.5 22 12 22ZM10.5 15.5L17.1 8.9L15.7 7.5L10.5 12.7L8.3 10.5L6.9 11.9L10.5 15.5Z" fill="#0095F6"/>
             </svg>
@@ -300,7 +326,6 @@
             <div class="title-line">Professional Photographer</div>
         </div>
 
-        <!-- SOCIAL LINKS -->
         <div class="social-links">
             <a href="https://instagram.com/yourusername" class="social-btn" title="Instagram">
                 <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="Instagram">
@@ -323,44 +348,82 @@
                 </p>
                 <div class="bio-divider"></div>
                 <p class="bio-arabic" id="heroBioAr">
-                    ألتقط اللحظات وأصنع قصصاً سينمائية ترتقي بعلامتك التجارية ورؤيتك.
+                    نحوّل لحظاتك إلى ذكريات خالدة، ونسعد قلبك بأجمل صورك وفيديوهاتك — نحن هنا لنكون جزءاً من فرحتك ونجاحك، بكل احترافية ومحبة ❤️
                 </p>
             </div>
         </div>
 
+        <!-- ===== PROFESSIONAL HIGHLIGHT SENTENCE ===== -->
+        <div class="work-highlight">
+            <p class="work-highlight-text">
+                نتخصص بشغف في <span class="highlight-gold">تصوير الطعام، السيارات، صور شخصية احترافية، والمناسبات</span> — حيث كل لقطة تروي قصة، وكل تفصيل يعكس احترافيتنا ✨
+            </p>
+        </div>
+
+        <!-- ===== HORIZONTAL 4 CATEGORY BUTTONS ===== -->
         <div class="hero-work-buttons">
-            <a href="#" class="hero-work-btn" onclick="showPage('videography')">
-                <span>🎥</span> Videography
+            <a href="#" class="hero-work-btn" onclick="showPage('food')">
+                <span>🍽️</span> Food
             </a>
-            <a href="#" class="hero-work-btn" onclick="showPage('photography')">
-                <span>📸</span> Photography
+            <a href="#" class="hero-work-btn" onclick="showPage('cars')">
+                <span>🏎️</span> Cars
+            </a>
+            <a href="#" class="hero-work-btn" onclick="showPage('studio')">
+                <span>🎬</span> Studio
+            </a>
+            <a href="#" class="hero-work-btn" onclick="showPage('events')">
+                <span>🎉</span> Events
             </a>
         </div>
     </div>
 </section>
 
-<!-- ===== VIDEOGRAPHY PROJECTS PAGE ===== -->
-<section class="work-page" id="videographyPage">
+<!-- ===== FOOD PAGE ===== -->
+<section class="work-page" id="foodPage">
     <a href="#" class="back-btn" onclick="showPage('home')">
         <span>←</span> Back to Home
     </a>
     <div class="page-header">
-        <h2 class="page-title">🎥 Cinematic Videography</h2>
-        <p class="page-subtitle">Stories told through motion and light</p>
+        <h2 class="page-title">🍽️ Food</h2>
+        <p class="page-subtitle">Food photography & videography that makes you taste with your eyes</p>
     </div>
-    <div class="projects-grid" id="videographyGrid"></div>
+    <div class="projects-grid" id="foodGrid"></div>
 </section>
 
-<!-- ===== PHOTOGRAPHY PROJECTS PAGE ===== -->
-<section class="work-page" id="photographyPage">
+<!-- ===== CARS PAGE ===== -->
+<section class="work-page" id="carsPage">
     <a href="#" class="back-btn" onclick="showPage('home')">
         <span>←</span> Back to Home
     </a>
     <div class="page-header">
-        <h2 class="page-title">📸 Professional Photography</h2>
-        <p class="page-subtitle">Freezing moments in time with stunning clarity</p>
+        <h2 class="page-title">🏎️ Cars</h2>
+        <p class="page-subtitle">Capturing speed, power, and automotive elegance</p>
     </div>
-    <div class="projects-grid" id="photographyGrid"></div>
+    <div class="projects-grid" id="carsGrid"></div>
+</section>
+
+<!-- ===== STUDIO PAGE ===== -->
+<section class="work-page" id="studioPage">
+    <a href="#" class="back-btn" onclick="showPage('home')">
+        <span>←</span> Back to Home
+    </a>
+    <div class="page-header">
+        <h2 class="page-title">🎬 Studio</h2>
+        <p class="page-subtitle">Professional portraits crafted with precision lighting</p>
+    </div>
+    <div class="projects-grid" id="studioGrid"></div>
+</section>
+
+<!-- ===== EVENTS PAGE ===== -->
+<section class="work-page" id="eventsPage">
+    <a href="#" class="back-btn" onclick="showPage('home')">
+        <span>←</span> Back to Home
+    </a>
+    <div class="page-header">
+        <h2 class="page-title">🎉 Events</h2>
+        <p class="page-subtitle">Documenting life's most memorable celebrations</p>
+    </div>
+    <div class="projects-grid" id="eventsGrid"></div>
 </section>
 
 <!-- ===== MODAL ===== -->
@@ -388,119 +451,243 @@
 <!-- ===== JAVASCRIPT ===== -->
 <script>
 const projects = {
-    videography: [
+    food: [
         {
             id: 1,
-            title: 'Automotive Commercial',
-            description: 'A high-octane cinematic commercial shoot for a new luxury car launch, featuring dynamic drone shots, speed ramping, and dramatic color grading.',
-            image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&h=600&fit=crop',
-            tags: ['Commercial', 'Drone', 'Color Grading'],
-            client: 'Luxury Motors',
-            duration: '1 week',
-            tools: 'Sony FX3, DJI Mavic 3, DaVinci Resolve',
-            result: 'Used in national broadcast campaign',
+            title: 'Fine Dining Campaign',
+            description: 'A luxurious food photography campaign for a Michelin-starred restaurant, showcasing plated dishes with dramatic lighting and macro detail work.',
+            image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop',
+            tags: ['Food Photography', 'Macro', 'Lighting'],
+            client: 'Le Gourmet Restaurant',
+            duration: '2 days',
+            tools: 'Sony A7RIV, 90mm Macro, Profoto',
+            result: 'Increased reservations by 40%',
             liveLink: '#',
             caseStudy: '#'
         },
         {
             id: 2,
-            title: 'Wedding Highlight Film',
-            description: 'An emotional and beautifully crafted wedding highlight reel capturing the most intimate moments of the day with a cinematic, storytelling approach.',
-            image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop',
-            tags: ['Wedding', 'Cinematic', 'Storytelling'],
-            client: 'Sarah & James',
-            duration: '3 days edit',
-            tools: 'Canon EOS R5, Ronin S2, Premiere Pro',
-            result: 'Over 10k views on social media',
+            title: 'Culinary Video Reel',
+            description: 'A cinematic behind-the-scenes video capturing the artistry of a master chef at work, from prep to final plating.',
+            image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&h=600&fit=crop',
+            tags: ['Video', 'Cinematic', 'Storytelling'],
+            client: 'Chef Ahmed',
+            duration: '1 week',
+            tools: 'Sony FX3, Gimbal, DaVinci',
+            result: 'Viral on social media',
             liveLink: '#',
             caseStudy: '#'
         },
         {
             id: 3,
-            title: 'Music Video Production',
-            description: 'A creative and visually striking music video incorporating complex lighting setups, gimbal movements, and visual effects.',
-            image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&h=600&fit=crop',
-            tags: ['Music Video', 'VFX', 'Lighting'],
-            client: 'Indie Artist',
-            duration: '2 weeks',
-            tools: 'RED Komodo, After Effects',
-            result: 'Featured on major music blogs',
+            title: 'Menu Photography',
+            description: 'Clean, appetizing menu photography for a modern cafe chain, emphasizing fresh ingredients and vibrant colors.',
+            image: 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=800&h=600&fit=crop',
+            tags: ['Menu', 'Commercial', 'Styling'],
+            client: 'Urban Cafe',
+            duration: '3 days',
+            tools: 'Canon R5, Natural Light',
+            result: 'Featured in 12 locations',
             liveLink: '#',
             caseStudy: '#'
         },
         {
             id: 4,
-            title: 'Real Estate Tour',
-            description: 'A smooth, engaging walkthrough of a multi-million dollar property, showcasing architectural details and lifestyle elements.',
-            image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop',
-            tags: ['Real Estate', 'Walkthrough', 'Stabilization'],
-            client: 'Elite Real Estate Group',
-            duration: '2 days',
-            tools: 'Sony A7SIII, Wide Angle Lenses',
-            result: 'Property sold within 72 hours',
+            title: 'Food Product Commercial',
+            description: 'High-end product video for a gourmet spice brand, featuring slow-motion seasoning and sizzling close-ups.',
+            image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=600&fit=crop',
+            tags: ['Commercial', 'Slow Motion', 'Product'],
+            client: 'Royal Spices',
+            duration: '4 days',
+            tools: 'RED Komodo, High Speed',
+            result: 'National TV campaign',
             liveLink: '#',
             caseStudy: '#'
         }
     ],
-    photography: [
+    cars: [
         {
             id: 5,
-            title: 'Fashion Editorial Shoot',
-            description: 'A high-end studio portrait session for a modern fashion catalog, focusing on lighting techniques to highlight fabric textures and styling.',
-            image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&h=600&fit=crop',
-            tags: ['Fashion', 'Studio', 'Retouching'],
-            client: 'Vogue Essentials',
-            duration: '1 day',
-            tools: 'Nikon Z8, Profoto Lighting, Lightroom',
-            result: 'Cover feature in local magazine',
+            title: 'Luxury Car Showcase',
+            description: 'A premium automotive photoshoot featuring a new luxury sedan, highlighting curves, interior details, and night shots with light painting.',
+            image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=600&fit=crop',
+            tags: ['Car Photography', 'Night', 'Light Painting'],
+            client: 'Premium Motors',
+            duration: '2 days',
+            tools: 'Sony A7SIII, Wide Lenses',
+            result: 'Dealership launch campaign',
             liveLink: '#',
             caseStudy: '#'
         },
         {
             id: 6,
-            title: 'Product Macro Photography',
-            description: 'Crisp, detailed macro photography for a jewelry brand, utilizing focus stacking techniques to ensure perfect sharpness from front to back.',
-            image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=600&fit=crop',
-            tags: ['Product', 'Macro', 'Focus Stacking'],
-            client: 'Aurora Gemstones',
-            duration: '3 days',
-            tools: 'Canon 100mm Macro, Photoshop',
-            result: 'Used across global e-commerce store',
+            title: 'Racing Drone Film',
+            description: 'An adrenaline-fueled drone video following supercars on a track, with dynamic speed ramping and aerial perspectives.',
+            image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&h=600&fit=crop',
+            tags: ['Drone', 'Racing', 'Aerial'],
+            client: 'Speed Circuit',
+            duration: '1 week',
+            tools: 'DJI Inspire 3, Sony FX6',
+            result: '1M+ views online',
             liveLink: '#',
             caseStudy: '#'
         },
         {
             id: 7,
-            title: 'Corporate Headshots',
-            description: 'Professional and approachable corporate headshots for a tech company’s entire executive team, shot on location with portable studio lighting.',
-            image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=600&fit=crop',
-            tags: ['Corporate', 'Portraits', 'Lighting'],
-            client: 'TechInnovate Inc.',
-            duration: '2 days',
-            tools: 'Sony A7RIV, Softbox modifiers',
-            result: 'Updated entire company roster',
+            title: 'Classic Car Restoration',
+            description: 'Documentary-style photography capturing the restoration journey of a vintage classic car, from rust to glory.',
+            image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&h=600&fit=crop',
+            tags: ['Documentary', 'Classic', 'Detail'],
+            client: 'Vintage Garage',
+            duration: '3 months',
+            tools: 'Nikon Z8, Macro Lenses',
+            result: 'Published in auto magazine',
             liveLink: '#',
             caseStudy: '#'
         },
         {
             id: 8,
-            title: 'Event Coverage',
-            description: 'Candid and dynamic event photography capturing the energy of a large-scale industry conference and keynote speakers.',
-            image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
-            tags: ['Event', 'Photojournalism', 'Low Light'],
-            client: 'Global Tech Summit',
+            title: 'Car Dealership Commercial',
+            description: 'A sleek commercial video for a car dealership, featuring multiple vehicles in urban and desert settings.',
+            image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop',
+            tags: ['Commercial', 'Multi-Location', 'Cinematic'],
+            client: 'Auto World',
+            duration: '5 days',
+            tools: 'RED, Ronin, Drone',
+            result: '30% sales increase',
+            liveLink: '#',
+            caseStudy: '#'
+        }
+    ],
+    studio: [
+        {
+            id: 9,
+            title: 'Executive Portraits',
+            description: 'Professional headshots for C-suite executives, shot in-studio with precise lighting and subtle retouching.',
+            image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&h=600&fit=crop',
+            tags: ['Headshots', 'Corporate', 'Lighting'],
+            client: 'Fortune 500 Company',
+            duration: '1 day',
+            tools: 'Phase One, Softboxes',
+            result: 'Updated all company profiles',
+            liveLink: '#',
+            caseStudy: '#'
+        },
+        {
+            id: 10,
+            title: 'Fashion Editorial',
+            description: 'High-fashion studio shoot for a clothing brand, featuring dramatic lighting and creative styling.',
+            image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&h=600&fit=crop',
+            tags: ['Fashion', 'Editorial', 'Creative'],
+            client: 'Moda Label',
+            duration: '2 days',
+            tools: 'Hasselblad, Profoto',
+            result: 'Magazine cover feature',
+            liveLink: '#',
+            caseStudy: '#'
+        },
+        {
+            id: 11,
+            title: 'Product Studio Shoot',
+            description: 'Clean, crisp product photography for an e-commerce brand, with perfect white background and shadow control.',
+            image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=600&fit=crop',
+            tags: ['Product', 'E-commerce', 'Clean'],
+            client: 'Tech Gadgets Co.',
             duration: '3 days',
-            tools: 'Dual Camera Setup, Fast Primes',
-            result: 'Delivered 500+ edited photos same-day',
+            tools: 'Canon R5, Light Table',
+            result: '200+ products cataloged',
+            liveLink: '#',
+            caseStudy: '#'
+        },
+        {
+            id: 12,
+            title: 'Creative Portrait Series',
+            description: 'Artistic portrait series exploring light and shadow, featuring local artists and creatives in a controlled studio environment.',
+            image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&h=600&fit=crop',
+            tags: ['Artistic', 'Portrait', 'Creative'],
+            client: 'Art Collective',
+            duration: '1 week',
+            tools: 'Sony A1, Projector Lighting',
+            result: 'Gallery exhibition',
+            liveLink: '#',
+            caseStudy: '#'
+        }
+    ],
+    events: [
+        {
+            id: 13,
+            title: 'Wedding Cinematic Film',
+            description: 'An emotional wedding highlight film capturing intimate moments, vows, and celebration with a cinematic storytelling approach.',
+            image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop',
+            tags: ['Wedding', 'Cinematic', 'Emotional'],
+            client: 'Sarah & Mohammed',
+            duration: '3 days edit',
+            tools: 'Canon R5, Ronin, Premiere',
+            result: '10k+ social media views',
+            liveLink: '#',
+            caseStudy: '#'
+        },
+        {
+            id: 14,
+            title: 'Corporate Gala Coverage',
+            description: 'Professional photo and video coverage of a large corporate gala, capturing keynote speakers, networking, and awards.',
+            image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop',
+            tags: ['Corporate', 'Gala', 'Live Coverage'],
+            client: 'Global Tech Summit',
+            duration: '2 days',
+            tools: 'Dual Sony, Fast Primes',
+            result: '500+ photos delivered',
+            liveLink: '#',
+            caseStudy: '#'
+        },
+        {
+            id: 15,
+            title: 'Concert Live Recording',
+            description: 'Multi-camera video production of a live concert, with dynamic switching and professional audio capture.',
+            image: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop',
+            tags: ['Concert', 'Multi-Cam', 'Live'],
+            client: 'Indie Band',
+            duration: '1 night',
+            tools: '4x Sony, Switcher, Audio',
+            result: 'Sold as live album',
+            liveLink: '#',
+            caseStudy: '#'
+        },
+        {
+            id: 16,
+            title: 'Birthday Celebration',
+            description: 'A vibrant photo and video coverage of a milestone birthday party, capturing candid joy and styled portraits.',
+            image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&h=600&fit=crop',
+            tags: ['Birthday', 'Candid', 'Styled'],
+            client: 'Private Client',
+            duration: '1 day',
+            tools: 'Sony A7IV, Flash Setup',
+            result: 'Family heirloom album',
             liveLink: '#',
             caseStudy: '#'
         }
     ]
 };
 
+const tagStyles = {
+    food: 'tag-food',
+    cars: 'tag-cars',
+    studio: 'tag-studio',
+    events: 'tag-events'
+};
+
+const categoryIcons = {
+    food: '🍽️',
+    cars: '🏎️',
+    studio: '🎬',
+    events: '🎉'
+};
+
 function renderProjects(type, containerId) {
     const container = document.getElementById(containerId);
     const projectList = projects[type];
+    const tagClass = tagStyles[type];
+    const icon = categoryIcons[type];
     container.innerHTML = projectList.map(project => `
         <div class="project-card" onclick="openModal('${type}', ${project.id})">
             <div style="position: relative; overflow: hidden;">
@@ -510,8 +697,8 @@ function renderProjects(type, containerId) {
                 </div>
             </div>
             <div class="project-info">
-                <span class="project-tag ${type === 'videography' ? 'tag-video' : 'tag-photo'}">
-                    ${type === 'videography' ? '🎥 Video' : '📸 Photo'}
+                <span class="project-tag ${tagClass}">
+                    ${icon} ${type.charAt(0).toUpperCase() + type.slice(1)}
                 </span>
                 <h3 class="project-title">${project.title}</h3>
                 <p class="project-desc">${project.description.substring(0, 100)}...</p>
@@ -539,8 +726,9 @@ function openModal(type, projectId) {
     document.getElementById('modalImage').alt = project.title;
     document.getElementById('modalTitle').textContent = project.title;
     document.getElementById('modalDescription').textContent = project.description;
+    const tagClass = tagStyles[type];
     document.getElementById('modalTags').innerHTML = project.tags.map(tag => 
-        `<span class="project-tag ${type === 'videography' ? 'tag-video' : 'tag-photo'}">${tag}</span>`
+        `<span class="project-tag ${tagClass}">${tag}</span>`
     ).join('');
     document.getElementById('modalDetails').innerHTML = `
         <div class="detail-row"><span class="detail-label">Client</span><span class="detail-value">${project.client}</span></div>
@@ -548,15 +736,9 @@ function openModal(type, projectId) {
         <div class="detail-row"><span class="detail-label">Gear / Tools</span><span class="detail-value">${project.tools}</span></div>
         <div class="detail-row"><span class="detail-label">Impact</span><span class="detail-value" style="color: var(--primary-dark); font-weight: 700;">${project.result}</span></div>
     `;
-    
-    // Change button text based on type
+
     const liveLinkBtn = document.getElementById('modalLiveLink');
-    if (type === 'videography') {
-        liveLinkBtn.innerHTML = '<span>▶️</span> Watch Full Video';
-    } else {
-        liveLinkBtn.innerHTML = '<span>👁</span> View High-Res';
-    }
-    
+    liveLinkBtn.innerHTML = '<span>▶️</span> Watch Full Video';
     liveLinkBtn.href = project.liveLink;
     document.getElementById('modalCaseStudy').href = project.caseStudy;
     document.getElementById('modalOverlay').classList.add('active');
@@ -571,9 +753,11 @@ function closeModal(event) {
 
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-// Render both grids on load
-renderProjects('videography', 'videographyGrid');
-renderProjects('photography', 'photographyGrid');
+// Render all grids on load
+renderProjects('food', 'foodGrid');
+renderProjects('cars', 'carsGrid');
+renderProjects('studio', 'studioGrid');
+renderProjects('events', 'eventsGrid');
 
 document.querySelectorAll('a[href="#"]').forEach(link => {
     link.addEventListener('click', function(e) { e.preventDefault(); });
